@@ -1,0 +1,106 @@
+---
+import Star from './Star.astro';
+
+export interface Slide {
+  src: string;
+  alt?: string;
+  title?: string;
+  subtitle?: string;
+  link?: string;
+  rate?: number;
+  resume?:string;
+}
+
+interface Props {
+  slides: Slide[];
+  interval?: number;
+}
+
+const { slides, interval = 4000 } = Astro.props;
+const uid = crypto.randomUUID().slice(0, 8);
+---
+
+<div
+  class="carousel relative w-full h-full overflow-hidden"
+  data-carousel-id={uid}
+  data-interval={interval}
+>
+  {
+    slides.map((slide, i) => (
+      <div
+        class="carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out"
+        style={`opacity: ${i === 0 ? 1 : 0};`}
+        data-index={i}
+      >
+        <img
+          src={slide.src}
+          alt={slide.alt ?? ""}
+          class="w-full h-full object-cover brightness-50"
+        />
+
+        {(slide.title || slide.link || slide?.subtitle) && slide?.rate && (
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-full flex flex-col items-center gap-5 p-4">
+            <div class={slide?.rate  >= 9 ? "h-120 w-120 border-4 border-red-500 rounded-full flex flex-col items-center justify-center":"h-120 w-120 border-4 border-white rounded-full flex flex-col items-center justify-center"}>
+              <div class="flex flex-col gap-2 relative">
+                <div class="z-10 flex flex-row justify-center absolute left-1/2 -translate-x-1/2">
+                {slide.rate >= 9 && (
+                <Star size={60} color='#fb2c36'/>
+                )}
+                </div>
+              <p class={slide?.rate >= 9 ? "text-red-500 text-[16rem] font-extrabold" :"text-white text-[16rem] font-extrabold"}>{(slide?.rate)?.toFixed(1)}</p>
+              </div>
+            </div>
+            <div class="text-center flex flex-col gap-5 items-center">
+              <div class="flex flex-col gap-2">
+                {slide.title && (
+                  <p class={"text-white text-lg sm:text-4xl font-extrabold drop-shadow-md"}>
+                    {slide.title}
+                  </p>
+                )}
+                {slide.subtitle && (
+                  <p class="text-white text-lg sm:text-4xl font-semibold drop-shadow-md">
+                    {slide.subtitle}
+                  </p>
+                )}
+              </div>
+              {slide.link && (
+                <a
+                  href={slide?.link}
+                  class="bg-red-600 w-40 p-2 rounded-full font-bold text-white"
+                >
+                  VER REVIEW
+                </a>
+                <div class="flex flex-col gap-2">
+                  <div class="h-10">
+                {slide.resume && (
+                  <p class="text-white text-lg sm:text-2xl font-bold drop-shadow-md">
+                    {slide.resume}
+                  </p>
+                )}
+                  </div>
+              </div>
+              )}
+            </div>
+          </div>
+        )}
+        <div class="absolute inset-0 shadow-[inset_0_0_150px_5px_#0a0a0a] pointer-events-none z-20" />
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".carousel").forEach((carousel) => {
+    const slides = carousel.querySelectorAll<HTMLElement>(".carousel-slide");
+    const interval = Number(carousel.dataset.interval) || 4000;
+    let current = 0;
+
+    if (slides.length <= 1) return;
+
+    setInterval(() => {
+      slides[current].style.opacity = "0";
+      current = (current + 1) % slides.length;
+      slides[current].style.opacity = "1";
+    }, interval);
+  });
+</script>

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "metropolis";
+  src: url("/fonts/metropolis.otf") format("opentype");
+  font-weight: bolder;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "metropolis", sans-serif;
+}

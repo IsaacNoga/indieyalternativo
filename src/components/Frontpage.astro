@@ -1,0 +1,45 @@
+---
+import Grain from "./Grain.astro";
+import Navbar from "./Navbar.astro";
+import Carousel from "./Carousel.astro";
+import RecentNews from "./RecentNews.astro";
+
+const slides = [
+  {
+    src: "/img/karlog.webp",
+    title: "NO ME ARREPIENTO DE SENTIR TANTO",
+    subtitle: "KARLO G",
+    link: "/",
+    resume:
+      "Explorando nuevas facetas de su identidad artística. En NO ME ARREPIENTO DE SENTIR TANTO",
+    rate: 7.9,
+  },
+  {
+    src: "/img/arca.webp",
+    title: "XXXX",
+    subtitle: "Arca",
+    link: "/",
+    resume:
+      "Es un proyecto que prefiere la transformación constante, donde la textura, el ruido y la deconstrucción pesan más que la inmediatez.",
+    rate: 8.0,
+  },
+  {
+    src: "/img/charliexcx.webp",
+    title: "Music, Fashion, Film",
+    subtitle: "Charlie XCX",
+    link: "/",
+    resume:
+      "En lugar de intentar replicar aquella fórmula, Music, Fashion, Film toma el camino más inteligente.",
+    rate: 9.6,
+  },
+];
+---
+
+<div class="w-full h-full bg-black relative">
+  <Grain opacity={0.01} />
+  <Navbar />
+  <div class="w-full h-full">
+    <Carousel interval={5000} slides={slides} />
+  </div>
+  <RecentNews />
+</div>
