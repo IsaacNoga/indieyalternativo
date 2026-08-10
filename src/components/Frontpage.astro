@@ -4,11 +4,11 @@ import Navbar from "./Navbar.astro";
 import Carousel from "./Carousel.astro";
 import RecentNews from "./RecentNews.astro";
 
-const slides = [
+const frontReviews = [
   {
     src: "/img/karlog.webp",
     title: "NO ME ARREPIENTO DE SENTIR TANTO",
-    subtitle: "KARLO G",
+    subtitle: "KAROL G",
     link: "/",
     resume:
       "Explorando nuevas facetas de su identidad artística. En NO ME ARREPIENTO DE SENTIR TANTO",
@@ -39,7 +39,7 @@ const slides = [
   <Grain opacity={0.01} />
   <Navbar />
   <div class="w-full h-full">
-    <Carousel interval={5000} slides={slides} />
+    <Carousel interval={5000} slides={frontReviews} />
   </div>
   <RecentNews />
 </div>

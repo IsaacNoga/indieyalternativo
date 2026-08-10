@@ -1,11 +1,72 @@
 ---
+import Star from "./Star.astro";
 
+const frontReviews = [
+  {
+    src: "/img/karlog.webp",
+    title: "NO ME ARREPIENTO DE SENTIR TANTO",
+    subtitle: "KAROL G",
+    link: "/",
+    resume:
+      "El álbum encuentra sus mejores momentos cuando Karol G se permite experimentar con una producción más atmosférica, dejando el reguetón en segundo plano para priorizar elementos de dream pop y una electrónica más detallista. Canciones como “Final Feliz”, producida por Oklou, destacan por llevar su propuesta hacia terrenos más delicados y experimentales, aportando una sensibilidad distinta dentro del proyecto. Las colaboraciones también suman nuevos matices que enriquecen la experiencia y refuerzan la intención de expandir sus fronteras creativas.",
+    rate: 7.9,
+  },
+  {
+    src: "/img/arca.webp",
+    title: "XXXX",
+    subtitle: "Arca",
+    link: "/",
+    resume:
+      "Es un proyecto que prefiere la transformación constante, donde la textura, el ruido y la deconstrucción pesan más que la inmediatez.",
+    rate: 8.0,
+  },
+  {
+    src: "/img/charliexcx.webp",
+    title: "Music, Fashion, Film",
+    subtitle: "Charlie XCX",
+    link: "/",
+    resume:
+      "En lugar de intentar replicar aquella fórmula, Music, Fashion, Film toma el camino más inteligente.",
+    rate: 9.6,
+  },
+];
 ---
 
 <div class="w-full h-full flex flex-row justify-center">
-  <div class="w-2/3 h-full border-x border-x-neutral-200 p-10">
-    <div class="">
-      
+  <div class="w-2/3 h-full border-x border-x-neutral-200 pt-10 px-5">
+    <p class="col-span-2 text-4xl font-extrabold">NOTICIAS</p>
+    <div class="w-full grid grid-cols-2">
+      <div
+        class="h-200 w-full col-span-1 border border-red-500 flex flex-col gap-1 p-4"
+      >
+        <p class="font-extrabold text-2xl">
+          NO ME ARREPIENTO DE SENTIR TANTO
+        </p>
+        <div class="w-full flex flex-row gap-1 justify-between">
+          <p class="text-lg">KAROL G</p>
+          <div class="flex flex-row gap-1">
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+            <Star />
+          </div>
+        </div>
+        <p>
+          El álbum encuentra sus mejores momentos cuando Karol G se permite
+          experimentar con una producción más atmosférica, dejando el reguetón
+          en segundo plano para priorizar elementos de dream pop y una
+          electrónica más detallista. Canciones como “Final Feliz”, producida
+          por Oklou, destacan por llevar su propuesta hacia terrenos más
+          delicados y experimentales, aportando una sensibilidad distinta dentro
+          del proyecto. Las colaboraciones también suman nuevos matices que
+          enriquecen la experiencia y refuerzan la intención de expandir sus
+          fronteras creativas.
+        </p>
+      </div>
+      <div class="h-200 w-full col-span-1 border border-red-500">
+        <img src="/img/karlog.webp" />
+      </div>
     </div>
   </div>
 </div>
