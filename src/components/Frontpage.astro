@@ -3,6 +3,7 @@ import Grain from "./Grain.astro";
 import Navbar from "./Navbar.astro";
 import Carousel from "./Carousel.astro";
 import RecentNews from "./RecentNews.astro";
+import QuickReviews from "./QuickReviews.astro";
 
 const frontReviews = [
   {
@@ -35,9 +36,10 @@ const frontReviews = [
 ];
 ---
 
-<div class="w-full h-full bg-black relative">
+<div class="w-full h-full relative overflow-y-auto scrollbar-none">
   <Grain opacity={0.01} />
   <Navbar />
   <Carousel interval={5000} slides={frontReviews} />
+  <QuickReviews />
   <RecentNews />
 </div>

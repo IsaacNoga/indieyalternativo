@@ -1,0 +1,45 @@
+---
+import Star from "./Star.astro";
+
+interface Props {
+  src: string;
+  title?: string;
+  rate?: number;
+}
+const { src, title, rate } = Astro.props;
+
+let circleRateClass =
+  "w-40 h-40 flex flex-row justify-center items-center rounded-full border-3 border-white backdrop-blur-xl";
+
+
+let rateNumberclass = "text-white text-7xl font-semibold text-shadow-lg";
+
+if (rate && rate >= 9) {
+  circleRateClass =
+    "w-40 h-40 flex flex-row justify-center items-center rounded-full border-3 border-red-500 backdrop-blur-xl";
+  rateNumberclass = "text-red-500 text-7xl font-semibold text-shadow-lg";
+}
+---
+
+<div class="w-150 shrink-0 flex flex-col relative">
+  <div class="w-full flex flex-row justify-end p-4 z-10 absolute top-0">
+    <div class={circleRateClass}>
+      {rate && rate >= 9 && <Star size={60} color="#fb2c36" />}
+      <p class={rateNumberclass}>
+        {rate}
+      </p>
+    </div>
+  </div>
+  <div class="aspect-video w-full overflow-hidden">
+    <img
+      src={src}
+      alt={title}
+      class="w-full h-full object-cover object-center hover:brightness-75 transition-all ease-in-out duration-200 cursor-pointer"
+    />
+  </div>
+  <p
+    class="w-full text-3xl font-extrabold p-2 mt-0 z-10 absolute bottom-0 right-0 text-white text-shadow-lg backdrop-blur-xs backdrop-brightness-80"
+  >
+    {title}
+  </p>
+</div>

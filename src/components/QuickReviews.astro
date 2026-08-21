@@ -1,0 +1,65 @@
+---
+import ReviewCard from "./ReviewCard.astro";
+import Star from "./Star.astro";
+
+const frontReviews = [
+  {
+    src: "/img/karlog.webp",
+    title: "NO ME ARREPIENTO DE SENTIR TANTO",
+    subtitle: "KAROL G",
+    rate: 9.0,
+    link: "/",
+  },
+  {
+    src: "/img/arca.webp",
+    title: "XXXX",
+    subtitle: "Arca",
+    rate: 5.3,
+    link: "/",
+  },
+  {
+    src: "/img/charliexcx.webp",
+    title: "Music, Fashion, Film",
+    subtitle: "Charlie XCX",
+    rate: 10,
+    link: "/",
+  },
+  {
+    src: "/img/charliexcx.webp",
+    title: "Music, Fashion, Film",
+    subtitle: "Charlie XCX",
+    rate: 8.4,
+    link: "/",
+  },
+];
+---
+
+<div class="w-full h-full flex flex-col p-0 bg-red-500">
+  <div class="flex flex-col gap-1">
+    <div class="flex flex-row gap-1 pt-4 md:px-6">
+      <Star size={34} />
+      <p class="text-4xl title">MÁS REVIEWS</p>
+    </div>
+    <div class="w-full border border-black my-2"></div>
+    <div class="w-full flex flex-row overflow-x-auto scrollbar-none">
+      {
+        frontReviews.map((review) => (
+          <ReviewCard
+            src={review?.src}
+            title={review?.title}
+            rate={review?.rate}
+          />
+        ))
+      }
+      {
+        frontReviews.map((review) => (
+          <ReviewCard
+            src={review?.src}
+            title={review?.title}
+            rate={review?.rate}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
