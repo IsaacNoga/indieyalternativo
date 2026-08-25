@@ -1,14 +1,16 @@
 ---
-import Star from './Star.astro';
+import Grain from "./Grain.astro";
+import Star from "./Star.astro";
 
 export interface Slide {
   src: string;
   alt?: string;
-  title?: string;
-  subtitle?: string;
+  title: string;
+  subtitle: string;
   link?: string;
   rate?: number;
-  resume?:string;
+  resume: string;
+  gender: string;
 }
 
 interface Props {
@@ -35,55 +37,62 @@ const uid = crypto.randomUUID().slice(0, 8);
         <img
           src={slide.src}
           alt={slide.alt ?? ""}
-          class="w-full h-full object-cover brightness-50"
+          class="w-full h-full object-cover brightness-40"
         />
 
         {(slide.title || slide.link || slide?.subtitle) && slide?.rate && (
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 rounded-full flex flex-col items-center gap-5 p-4">
-            <div class={slide?.rate  >= 9 ? "h-120 w-120 border-4 border-red-500 rounded-full flex flex-col items-center justify-center":"h-120 w-120 border-4 border-white rounded-full flex flex-col items-center justify-center"}>
-              <div class="flex flex-col gap-2 relative">
-                <div class="z-10 flex flex-row justify-center absolute left-1/2 -translate-x-1/2">
-                {slide.rate >= 9 && (
-                <Star size={60} color='#fb2c36'/>
-                )}
-                </div>
-              <p class={slide?.rate >= 9 ? "text-red-500 text-[16rem] font-extrabold" :"text-white text-[16rem] font-extrabold"}>{(slide?.rate)?.toFixed(1)}</p>
-              </div>
-            </div>
-            <div class="text-center flex flex-col gap-5 items-center">
+          <div class="h-full w-full absolute z-20 bottom-0 flex flex-row justify-between gap-6 py-30 px-20">
+            <div class="h-full flex flex-col gap-2 justify-end p-5 w-2/3">
               <div class="flex flex-col gap-2">
-                {slide.title && (
-                  <p class={"text-white text-lg sm:text-4xl font-extrabold drop-shadow-md"}>
-                    {slide.title}
+                <div class="flex flex-row gap-1">
+                  <p class="text-red-500 font-extrabold text-2xl title">
+                    {slide.gender}
                   </p>
-                )}
-                {slide.subtitle && (
-                  <p class="text-white text-lg sm:text-4xl font-semibold drop-shadow-md">
-                    {slide.subtitle}
-                  </p>
-                )}
-              </div>
-              {slide.link && (
-                <a
-                  href={slide?.link}
-                  class="bg-red-600 w-40 p-2 rounded-full font-bold text-white"
+                  <Star size={28} color="#fb2c36" />
+                </div>
+                <p
+                  class={
+                    "w-full text-white text-lg text-justify sm:text-2xl font-bold"
+                  }
                 >
-                  VER REVIEW
-                </a>
-                <div class="flex flex-col gap-2">
-                  <div class="h-10">
-                {slide.resume && (
-                  <p class="text-white text-lg sm:text-2xl font-bold drop-shadow-md">
-                    {slide.resume}
-                  </p>
-                )}
-                  </div>
+                  {slide.title}
+                </p>
+                <p class="text-white text-lg sm:text-xl font-bold">
+                  {slide.subtitle}
+                </p>
               </div>
-              )}
+              <p class="text-neutral-400 text-md h-30">{slide.resume}</p>
+            </div>
+            <div class="h-full flex flex-col justify-end items-center gap-10 w-1/3">
+              <div
+                class={
+                  slide?.rate >= 9
+                    ? "h-55 w-55 border-4 border-red-500 rounded-full flex flex-col items-center justify-center"
+                    : "h-55 w-55 border-4 border-white rounded-full flex flex-col items-center justify-center"
+                }
+              >
+                <div class="flex flex-col gap-2 relative">
+                  <div class="z-10 flex flex-row justify-center absolute left-1/2 -translate-x-1/2">
+                    {slide.rate >= 9 && <Star size={30} color="#fb2c36" />}
+                  </div>
+                  <p
+                    class={
+                      slide?.rate >= 9
+                        ? "text-red-500 text-[6rem] font-extrabold"
+                        : "text-white text-[6rem] font-extrabold"
+                    }
+                  >
+                    {slide?.rate?.toFixed(1)}
+                  </p>
+                </div>
+              </div>
+              <p class="text-neutral-400 text-sm uppercase">
+                By Javier Rosales 2026
+              </p>
             </div>
           </div>
         )}
-        <div class="absolute inset-0 shadow-[inset_0_0_150px_5px_#0a0a0a] pointer-events-none z-20" />
+        <div class="absolute inset-0 shadow-[inset_0_-150px_200px_50px_#0a0a0a] pointer-events-none z-10" />
       </div>
     ))
   }
