@@ -1,39 +1,45 @@
 ---
-import Grain from "./Grain.astro";
 import Star from "./Star.astro";
+
+interface Props {
+  transforms: boolean;
+}
+const { transforms = false } = Astro.props;
 ---
 
 <header
   id="navbar"
-  class="navbar h-16 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-10 z-50 text-white transition-colors duration-500 ease-in-out"
+  class="navbar h-16 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-4 md:px-10 z-50 text-white transition-colors duration-500 ease-in-out"
 >
-  <div class="h-full flex flex-row items-center gap-2">
-    <img src="/img/main_logo.png" class="h-full" />
-    <p class="font-extrabold">INDIE Y ALTERNATIVO</p>
+  <div class="h-full flex flex-row items-center gap-2 min-w-0">
+    <img src="/img/main_logo.png" class="h-full shrink-0" />
+    <a class="font-extrabold text-sm md:text-base truncate" href="/">
+      INDIE Y ALTERNATIVO
+    </a>
   </div>
-  <div class="flex flex-row gap-10 items-center">
+
+  <div class="hidden lg:flex flex-row gap-10 items-center shrink-0">
     <a
       class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-1"
-      href="/reseñas"
+      href="/reviews"
     >
       <Star size={22} />
       <p>RESEÑAS</p>
     </a>
     <a
       class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-1"
-      href="/noticias"
+      href="/news"
     >
       <Star size={22} />
       <p>NOTICIAS</p>
     </a>
     <a
       class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-1"
-      href="/reseñas"
+      href="/top-charts"
     >
       <Star size={22} />
-
-      TOP CHARTS</a
-    >
+      <p>TOP CHARTS</p>
+    </a>
     <a
       class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-1"
       href="/reseñas"
@@ -42,7 +48,51 @@ import Star from "./Star.astro";
       <p>GALERÍA</p>
     </a>
   </div>
+
+  <button
+    id="menu-toggle"
+    class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 shrink-0"
+    aria-label="Abrir menú"
+  >
+    <span class="block w-6 h-0.5 bg-current"></span>
+    <span class="block w-6 h-0.5 bg-current"></span>
+    <span class="block w-6 h-0.5 bg-current"></span>
+  </button>
 </header>
+
+<div
+  id="mobile-menu"
+  class="hidden lg:hidden flex-col bg-black text-white sticky top-16 z-40 px-4 py-4 gap-4"
+>
+  <a
+    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+    href="/reviews"
+  >
+    <Star size={20} />
+    <p>RESEÑAS</p>
+  </a>
+  <a
+    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+    href="/news"
+  >
+    <Star size={20} />
+    <p>NOTICIAS</p>
+  </a>
+  <a
+    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+    href="/top-charts"
+  >
+    <Star size={20} />
+    <p>TOP CHARTS</p>
+  </a>
+  <a
+    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+    href="/reseñas"
+  >
+    <Star size={20} />
+    <p>GALERÍA</p>
+  </a>
+</div>
 
 <style>
   .navbar {
@@ -55,10 +105,13 @@ import Star from "./Star.astro";
   }
 </style>
 
-<script>
+<script define:vars={{ transforms }}>
   const navbar = document.getElementById("navbar");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
   const onScroll = () => {
+    if (!transforms) return;
     if (window.scrollY > 20) {
       navbar?.classList.add("scrolled");
     } else {
@@ -68,4 +121,9 @@ import Star from "./Star.astro";
 
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  menuToggle?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
+  });
 </script>
