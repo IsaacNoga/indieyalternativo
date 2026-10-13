@@ -1,60 +1,9 @@
 ---
+import { reviews } from "../../assets/mockreviews";
 import Navbar from "../../components/Navbar.astro";
 import Star from "../../components/Star.astro";
 import Layout from "../../layouts/Layout.astro";
-
-const frontReviews = [
-  {
-    src: "/img/karlog.webp",
-    title: "NO ME ARREPIENTO DE SENTIR TANTO",
-    subtitle: "KAROL G",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 7.9,
-    genre: "URBANO - REGGAETON",
-  },
-  {
-    src: "/img/arca.webp",
-    title: "XXXX",
-    subtitle: "Arca",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 8.0,
-    genre: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    genre: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    genre: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    genre: "ELECTRONICO - EDM",
-  },
-];
+const frontReviews = reviews;
 ---
 
 <Layout>
@@ -165,7 +114,7 @@ const frontReviews = [
               </p>
               <div class="h-60 overflow-hidden relative">
                 <img
-                  src={review?.src}
+                  src={review?.mediaRoute}
                   alt={"karlog"}
                   class="w-full h-full object-cover"
                 />

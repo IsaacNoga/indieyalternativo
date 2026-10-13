@@ -1,42 +1,14 @@
 ---
+import { reviews } from "../assets/mockreviews";
 import ArtistCard from "./ArtistCard.astro";
 import ReviewCard from "./ReviewCard.astro";
 import Star from "./Star.astro";
 
-const frontReviews = [
-  {
-    src: "/img/karlog.webp",
-    title: "NO ME ARREPIENTO DE SENTIR TANTO",
-    subtitle: "KAROL G",
-    rate: 9.0,
-    link: "/",
-  },
-  {
-    src: "/img/arca.webp",
-    title: "XXXX",
-    subtitle: "Arca",
-    rate: 5.3,
-    link: "/",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    rate: 10,
-    link: "/",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    rate: 8.4,
-    link: "/",
-  },
-];
+const frontReviews = reviews;
 
 const topArtist = [
   {
-    src: "/img/karlog.webp",
+    src: "/img/karolg.webp",
     name: "KAROL G",
     rate: 1,
     link: "/",
@@ -48,22 +20,28 @@ const topArtist = [
     link: "/",
   },
   {
-    src: "/img/charliexcx.webp",
-    name: "Charlie XCX",
+    src: "/img/badbunny-verano.webp",
+    name: "Badbunny",
     rate: 3,
     link: "/",
   },
   {
-    src: "/img/charliexcx.webp",
-    name: "Charlie XCX",
+    src: "/img/tyler-chromakopia.webp",
+    name: "Tyler The Creator",
     rate: 4,
+    link: "/",
+  },
+  {
+    src: "/img/kendrick-gnx.webp",
+    name: "Kendrick Lammar",
+    rate: 5,
     link: "/",
   },
 ];
 ---
 
 <div class="w-full h-full flex flex-col justify-around pb-10 bg-red-500">
-  <div class="flex flex-col gap-1">
+  <div class="flex flex-col gap-1 h-1/2">
     <div class="flex flex-row gap-1 pt-4 md:px-6">
       <Star size={34} />
       <p class="text-4xl title">TOP REVIEWS DE LA SEMANA</p>
@@ -73,7 +51,7 @@ const topArtist = [
       {
         frontReviews.map((review) => (
           <ReviewCard
-            src={review?.src}
+            src={review?.mediaRoute}
             title={review?.title}
             rate={review?.rate}
           />
@@ -82,7 +60,7 @@ const topArtist = [
       {
         frontReviews.map((review) => (
           <ReviewCard
-            src={review?.src}
+            src={review?.mediaRoute}
             title={review?.title}
             rate={review?.rate}
           />
@@ -90,22 +68,13 @@ const topArtist = [
       }
     </div>
   </div>
-  <div class="flex flex-col gap-1">
+  <div class="flex flex-col gap-1 h-1/2">
     <div class="flex flex-row gap-1 pt-4 md:px-6">
       <Star size={34} />
       <p class="text-4xl title">TOP ARTISTAS DE LA SEMANA</p>
     </div>
     <div class="w-full border border-black my-2"></div>
     <div class="w-full flex flex-row overflow-x-auto scrollbar-none">
-      {
-        topArtist.map((review) => (
-          <ArtistCard
-            src={review?.src}
-            name={review?.name}
-            rate={review?.rate}
-          />
-        ))
-      }
       {
         topArtist.map((review) => (
           <ArtistCard

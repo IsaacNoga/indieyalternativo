@@ -4,39 +4,9 @@ import Navbar from "./Navbar.astro";
 import Carousel from "./Carousel.astro";
 import RecentNews from "./RecentNews.astro";
 import QuickReviews from "./QuickReviews.astro";
+import { reviews } from "../assets/mockreviews";
 
-const frontReviews = [
-  {
-    src: "/img/karlog.webp",
-    title: "NO ME ARREPIENTO DE SENTIR TANTO",
-    subtitle: "KAROL G",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 7.9,
-    gender: "URBANO - REGGAETON",
-  },
-  {
-    src: "/img/arca.webp",
-    title: "XXXX",
-    subtitle: "Arca",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 8.0,
-    gender: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    gender: "ELECTRONICO - EDM",
-  },
-];
+const frontReviews = reviews.slice(0,4);
 ---
 
 <div class="w-full h-full relative overflow-y-auto scrollbar-none">

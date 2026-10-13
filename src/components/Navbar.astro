@@ -9,7 +9,7 @@ const { transforms = false } = Astro.props;
 
 <header
   id="navbar"
-  class="navbar h-16 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-4 md:px-10 z-50 text-white transition-colors duration-500 ease-in-out"
+  class="navbar relative h-20 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-4 md:px-10 z-50 text-white transition-colors duration-500 ease-in-out"
 >
   <div class="h-full flex flex-row items-center gap-2 min-w-0">
     <img src="/img/main_logo.png" class="h-full shrink-0" />
@@ -62,7 +62,7 @@ const { transforms = false } = Astro.props;
 
 <div
   id="mobile-menu"
-  class="hidden lg:hidden flex-col bg-black text-white sticky top-16 z-40 px-4 py-4 gap-4"
+  class="absolute left-0 right-0 top-full z-40 flex lg:hidden flex-col origin-top bg-black text-white px-4 py-4 gap-4 transform scale-y-0 opacity-0 pointer-events-none transition-transform transition-opacity duration-300 ease-in-out"
 >
   <a
     class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
@@ -123,7 +123,12 @@ const { transforms = false } = Astro.props;
   onScroll();
 
   menuToggle?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    mobileMenu?.classList.toggle("flex");
+    const isOpen = mobileMenu?.classList.contains("scale-y-100");
+    mobileMenu?.classList.toggle("scale-y-100", !isOpen);
+    mobileMenu?.classList.toggle("opacity-100", !isOpen);
+    mobileMenu?.classList.toggle("pointer-events-auto", !isOpen);
+    mobileMenu?.classList.toggle("scale-y-0", isOpen);
+    mobileMenu?.classList.toggle("opacity-0", isOpen);
+    mobileMenu?.classList.toggle("pointer-events-none", isOpen);
   });
 </script>
