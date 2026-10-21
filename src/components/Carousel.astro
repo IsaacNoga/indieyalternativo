@@ -71,7 +71,7 @@ const uid = crypto.randomUUID().slice(0, 8);
             </div>
 
             <div class="order-1 lg:order-2 relative flex flex-col justify-center items-center lg:self-center lg:pt-0">
-              <div class="z-10 w-full flex flex-row justify-center absolute bottom-31 lg:-top-16">
+              <div class="z-10 w-full flex flex-row justify-center absolute bottom-25 lg:-top-16">
                 {slide.rate >= 9 && (
                   <Star class="size-6 lg:size-14" color="#fb2c36" />
                 )}
@@ -79,15 +79,15 @@ const uid = crypto.randomUUID().slice(0, 8);
               <div
                 class={
                   slide?.rate >= 9
-                    ? "h-30 w-30 md:h-55 md:w-55 border-4 lg:border-6 border-red-500 rounded-full flex flex-col items-center justify-center"
-                    : "h-30 w-30 md:h-55 md:w-55 border-4 lg:border-6 border-white rounded-full flex flex-col items-center justify-center"
+                    ? "h-25 w-25 md:h-55 md:w-55 border-4 lg:border-6 border-red-500 rounded-full flex flex-col items-center justify-center"
+                    : "h-25 w-25 md:h-55 md:w-55 border-4 lg:border-6 border-white rounded-full flex flex-col items-center justify-center"
                 }
               >
                 <p
                   class={
                     slide?.rate >= 9
-                      ? "text-red-500 text-5xl md:text-[5rem] font-extrabold"
-                      : "text-white text-5xl md:text-[5rem] font-extrabold"
+                      ? "text-red-500 text-4xl md:text-[5rem] font-extrabold"
+                      : "text-white text-4xl md:text-[5rem] font-extrabold"
                   }
                 >
                   {slide?.rate?.toFixed(1)}
