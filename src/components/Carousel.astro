@@ -65,13 +65,13 @@ const uid = crypto.randomUUID().slice(0, 8);
                   </p>
                 </div>
               </div>
-              <p class="text-neutral-400 font-extrabold text-clip text-xs md:text-xl h-15 lg:h-30">
+              <p class="text-neutral-400 font-extrabold text-xs md:text-xl leading-tight line-clamp-4 min-h-[4lh]">
                 {slide.resume}
               </p>
             </div>
 
-            <div class="order-1 lg:order-2 relative flex flex-col justify-center items-center lg:self-center pt-10 lg:pt-0">
-              <div class="z-10 w-full flex flex-row justify-center absolute top-3 lg:-top-16">
+            <div class="order-1 lg:order-2 relative flex flex-col justify-center items-center lg:self-center lg:pt-0">
+              <div class="z-10 w-full flex flex-row justify-center absolute bottom-31 lg:-top-16">
                 {slide.rate >= 9 && (
                   <Star class="size-6 lg:size-14" color="#fb2c36" />
                 )}
