@@ -1,0 +1,18 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar transforms={false} />
+  <div
+    class="w-full h-full flex flex-col gap-4 justify-center items-center bg-neutral-900"
+  >
+    <img class="h-120" src="/img/logo.png" />
+    <p class="text-white text-6xl title text-center">404</p>
+    <p class="text-white text-6xl text-center">página no encontrada</p>
+    <a class="bg-red-500 p-4 rounded-4xl font-extrabold uppercase" href="/"
+      >Volver al inicio</a
+    >
+  </div>
+</Layout>

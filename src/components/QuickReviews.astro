@@ -40,41 +40,44 @@ const topArtist = [
 ];
 ---
 
-<div class="w-full h-full flex flex-col justify-around pb-10 bg-red-500">
-  <div class="flex flex-col gap-1 h-1/2">
+<div
+  class="w-full min-h-1/2 lg:h-full flex flex-col justify-around pb-10 bg-red-500"
+>
+  <div
+    class="flex flex-col gap-1 h-dvh lg:h-1/2 overflow-y-auto lg:overflow-visible scrollbar-none"
+  >
     <div class="flex flex-row gap-1 pt-4 md:px-6">
       <Star size={34} />
       <p class="text-4xl title">TOP REVIEWS DE LA SEMANA</p>
     </div>
     <div class="w-full border border-black my-2"></div>
-    <div class="w-full flex flex-row overflow-x-auto scrollbar-none">
+    <div
+      class="w-full flex flex-col lg:flex-row lg:overflow-x-auto scrollbar-none"
+    >
       {
-        frontReviews.map((review) => (
-          <ReviewCard
-            src={review?.mediaRoute}
-            title={review?.title}
-            rate={review?.rate}
-          />
-        ))
-      }
-      {
-        frontReviews.map((review) => (
-          <ReviewCard
-            src={review?.mediaRoute}
-            title={review?.title}
-            rate={review?.rate}
-          />
-        ))
+        frontReviews
+          .slice(0, 9)
+          .map((review) => (
+            <ReviewCard
+              src={review?.mediaRoute}
+              title={review?.title}
+              rate={review?.rate}
+            />
+          ))
       }
     </div>
   </div>
-  <div class="flex flex-col gap-1 h-1/2">
+  <div
+    class="flex flex-col gap-1 h-dvh lg:h-1/2 overflow-y-auto lg:overflow-visible scrollbar-none"
+  >
     <div class="flex flex-row gap-1 pt-4 md:px-6">
       <Star size={34} />
       <p class="text-4xl title">TOP ARTISTAS DE LA SEMANA</p>
     </div>
     <div class="w-full border border-black my-2"></div>
-    <div class="w-full flex flex-row overflow-x-auto scrollbar-none">
+    <div
+      class="w-full flex flex-col lg:flex-row lg:overflow-x-auto scrollbar-none"
+    >
       {
         topArtist.map((review) => (
           <ArtistCard

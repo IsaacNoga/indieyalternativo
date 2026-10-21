@@ -1,50 +1,10 @@
 ---
+import { news } from "../../assets/mockreviews";
 import Navbar from "../../components/Navbar.astro";
 import Star from "../../components/Star.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const frontReviews = [
-  {
-    src: "/img/karlog.webp",
-    title: "NO ME ARREPIENTO DE SENTIR TANTO",
-    subtitle: "KAROL G",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 7.9,
-    genre: "URBANO - REGGAETON",
-  },
-  {
-    src: "/img/arca.webp",
-    title: "XXXX",
-    subtitle: "Arca",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 8.0,
-    genre: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    genre: "ELECTRONICO - EDM",
-  },
-  {
-    src: "/img/charliexcx.webp",
-    title: "Music, Fashion, Film",
-    subtitle: "Charlie XCX",
-    link: "/",
-    resume:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus dui eget arcu eleifend, eget mollis arcu tempor. Pellentesque gravida blandit tellus, molestie faucibus dui porttitor ut. Quisque consectetur risus at tellus egestas, et interdum sem congue. Maecenas eget eleifend lacus. Vivamus et pellentesque mauris. Curabitur fermentum finibus consequat. Maecenas interdum sem vel pellentesque congue. Vivamus bibendum sit amet nulla ac euismod. Vivamus gravida, lorem vel semper viverra, quam nulla tincidunt est, in semper turpis magna non orci.",
-    rate: 9.6,
-    genre: "ELECTRONICO - EDM",
-  },
-];
+const frontReviews = news;
 ---
 
 <Layout>
@@ -55,12 +15,10 @@ const frontReviews = [
     </div>
     <div class="w-full border"></div>
     <div class="w-2/3 grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div
-        class="w-full flex flex-col border-b-2 border-red-500 col-span-2 h-150"
-      >
+      <div class="w-full flex flex-col border-b-2 border-red-500 md:col-span-2">
         <div class="aspect-video w-full overflow-hidden">
           <img
-            src={"/img/karlog.webp"}
+            src={"/img/karolg.webp"}
             alt={"NO ME ARREPIENTO DE SENTIR TANTO"}
             class="w-full h-full object-cover object-center hover:brightness-75 transition-all ease-in-out duration-200 cursor-pointer"
           />
@@ -68,14 +26,14 @@ const frontReviews = [
         <p class="text-2xl py-2 mt-0 title">
           {"NO ME ARREPIENTO DE SENTIR TANTO"}
         </p>
-        <p class="text-sm md:text-lg font-extrabold">
+        <p class="text-sm md:text-lg font-extrabold line-clamp-4">
           Tras recibir una divertida propuesta de matrimonio por parte de un
           fanático de 56 años durante su concierto en el SoFi Stadium de Los
           Ángeles, y por unirse mediante su fundación Con Cora a un gran
           concierto benéfico para ayudar en la reconstrucción de zonas afectadas
           por sismos en Colombia
         </p>
-        <div class="w-full flex flex-col gap-1 mt-auto">
+        <div class="w-full flex flex-col gap-1 mt-auto pt-2">
           <div class="flex flex-row items-center">
             <Star size={20} />
             <p class="text-lg font-bold">Javier</p>
@@ -83,18 +41,20 @@ const frontReviews = [
           <p class="text-sm text-neutral-400">12/03/2025</p>
         </div>
       </div>
-      <div class="w-full flex flex-col gap-10 col-span-1 h-150">
+      <div class="w-full flex flex-col gap-5 md:col-span-1">
         {
           frontReviews.slice(0, 2).map((review) => (
-            <div class="w-full flex flex-col border-b-2 border-red-500 h-75">
+            <div class="w-full flex-1 min-h-0 flex flex-col border-b-2 border-red-500">
               <div class="aspect-video w-full overflow-hidden">
                 <img
-                  src={review?.src}
-                  alt={review?.title}
+                  src={review?.mediaRoute}
+                  alt={review?.mediaAlt}
                   class="w-full h-full object-cover object-center hover:brightness-75 transition-all ease-in-out duration-200 cursor-pointer"
                 />
               </div>
-              <p class="text-md py-2 mt-0 title">{review?.title}</p>
+              <p class="text-md py-2 mt-0 title line-clamp-2">
+                {review?.title}
+              </p>
               <div class="w-full flex flex-col gap-1 mt-auto">
                 <div class="flex flex-row items-center">
                   <Star size={18} />
@@ -106,13 +66,13 @@ const frontReviews = [
           ))
         }
       </div>
-      <div class="col-span-3 grid grid-cols-4 gap-5">
+      <div class="md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-5">
         {
           frontReviews.map((review) => (
-            <div class="w-full border-b-2 border-red-500">
+            <a href={review?.link} class="w-full border-b-2 border-red-500">
               <div class="aspect-video w-full overflow-hidden">
                 <img
-                  src={review?.src}
+                  src={review?.mediaRoute}
                   alt={review?.title}
                   class="w-full h-full object-cover object-center hover:brightness-75 transition-all ease-in-out duration-200 cursor-pointer"
                 />
@@ -125,7 +85,7 @@ const frontReviews = [
                 </div>
                 <p class="text-sm text-neutral-400">12/03/2025</p>
               </div>
-            </div>
+            </a>
           ))
         }
       </div>

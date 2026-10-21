@@ -33,7 +33,7 @@ const frontReviews = reviews;
             </div>
             <div class="aspect-video w-full overflow-hidden">
               <img
-                src={"/img/karlog.webp"}
+                src={"/img/karolg.webp"}
                 alt={"karlog"}
                 class="w-full h-full lg:h-150 object-cover object-center hover:brightness-80 transition-all ease-in-out duration-200 cursor-pointer"
               />
@@ -69,8 +69,9 @@ const frontReviews = reviews;
         </div>
         <div class="w-full lg:w-1/3 flex flex-col h-full">
           {
-            frontReviews.map((review, k) => (
-              <div
+            frontReviews.slice(0, 4).map((review, k) => (
+              <a
+                href={`/reviews/${review?.title.replaceAll(" ", "-")}`}
                 class={
                   k + 1 === frontReviews.length
                     ? "w-full flex-1 flex flex-row p-3 md:p-4 bg-neutral-900 cursor-pointer"
@@ -100,7 +101,7 @@ const frontReviews = reviews;
                     {review?.genre}
                   </p>
                 </div>
-              </div>
+              </a>
             ))
           }
         </div>
@@ -108,7 +109,10 @@ const frontReviews = reviews;
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {
           frontReviews.map((review) => (
-            <div class="h-auto md:h-120 bg-neutral-900 flex flex-col py-4 gap-2 cursor-pointer shadow-lg">
+            <a
+              href={`/reviews/${review?.title.replaceAll(" ", "-")}`}
+              class="h-auto md:h-120 bg-neutral-900 flex flex-col py-4 gap-2 cursor-pointer shadow-lg"
+            >
               <p class="text-white font-extrabold text-xl h-15 px-4">
                 {review?.title}
               </p>
@@ -134,7 +138,7 @@ const frontReviews = reviews;
                 <p class="text-neutral-300 text-xs">BY JAVI</p>
                 <p class="text-neutral-300 text-xs">08 2026</p>
               </div>
-            </div>
+            </a>
           ))
         }
       </div>

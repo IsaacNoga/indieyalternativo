@@ -1,2 +1,72 @@
 ---
+import { reviews } from "../../assets/mockreviews";
+import Navbar from "../../components/Navbar.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const { slug } = Astro.params;
+
+const title = slug?.replaceAll("-", " ");
+
+const review = reviews.find((r) => r.title === title);
 ---
+
+<Layout>
+  <Navbar transforms={false} />
+  <div class="w-full h-full flex flex-col items-center scrollbar-none">
+    <div class="flex flex-col gap-2 w-full md:w-1/2">
+      <div class="w-full flex flex-row items-baseline px-4 lg:px-0">
+        <div class="w-full flex flex-col items-baseline justify-between">
+          <h1 class="font-extrabold text-4xl lg:text-6xl uppercase title pt-4">
+            {title}
+          </h1>
+          <div class="flex flex-col gap-0">
+            <p class="text-xs md:text-md font-semibold">12/03/2026</p>
+            <p class="text-xs md:text-md font-semibold">POR: JAVI</p>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+          {
+            review?.rate && (
+              <div
+                class={
+                  review?.rate >= 9
+                    ? "h-16 w-16 md:h-20 md:w-20 border-2 lg:border-4 border-red-500 rounded-full flex flex-col items-center justify-center"
+                    : "h-16 w-16 md:h-20 md:w-20 border-2 lg:border-4 border-white rounded-full flex flex-col items-center justify-center"
+                }
+              >
+                <p
+                  class={
+                    review?.rate >= 9
+                      ? "text-red-500 text-2xl md:text-[2rem] font-extrabold"
+                      : "text-white text-2xl md:text-[2rem] font-extrabold"
+                  }
+                >
+                  {review?.rate?.toFixed(1)}
+                </p>
+              </div>
+            )
+          }
+        </div>
+      </div>
+      <div class="border w-full"></div>
+      <div class="p-2 flex flex-col gap-2 relative items-center">
+        <p class="px-4 text-lg text-justify font-bold">
+          {review?.resume}
+        </p>
+        <div
+          class="w-full flex flex-col md:flex-row items-center justify-center"
+        >
+          <img
+            class="h-120 w-120 object-cover object-top"
+            alt={review?.subtitle}
+            src={review?.mediaRoute}
+          />
+        </div>
+      </div>
+      <div class="border w-full"></div>
+      <div class="flex flex-col py-2 items-center">
+        <p class="text-sm md:text-xl text-justify px-10">{review?.review}</p>
+      </div>
+    </div>
+  </div>
+</Layout>

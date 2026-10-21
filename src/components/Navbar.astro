@@ -9,11 +9,11 @@ const { transforms = false } = Astro.props;
 
 <header
   id="navbar"
-  class="navbar relative h-20 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-4 md:px-10 z-50 text-white transition-colors duration-500 ease-in-out"
+  class="navbar h-16 lg:h-20 w-full flex flex-row justify-between items-center gap-5 sticky top-0 py-2 px-4 md:px-10 z-50 text-white transition-colors duration-500 ease-in-out"
 >
   <div class="h-full flex flex-row items-center gap-2 min-w-0">
-    <img src="/img/main_logo.png" class="h-full shrink-0" />
-    <a class="font-extrabold text-sm md:text-base truncate" href="/">
+    <img src="/img/main_logo.png" class="h-3/4 shrink-0" />
+    <a class="font-extrabold text-xs md:text-base truncate" href="/">
       INDIE Y ALTERNATIVO
     </a>
   </div>
@@ -42,7 +42,7 @@ const { transforms = false } = Astro.props;
     </a>
     <a
       class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-1"
-      href="/reseñas"
+      href="/galeria"
     >
       <Star size={22} />
       <p>GALERÍA</p>
@@ -51,48 +51,49 @@ const { transforms = false } = Astro.props;
 
   <button
     id="menu-toggle"
-    class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 shrink-0"
+    class="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 shrink-0 cursor-pointer"
     aria-label="Abrir menú"
   >
     <span class="block w-6 h-0.5 bg-current"></span>
     <span class="block w-6 h-0.5 bg-current"></span>
     <span class="block w-6 h-0.5 bg-current"></span>
   </button>
-</header>
 
-<div
-  id="mobile-menu"
-  class="absolute left-0 right-0 top-full z-40 flex lg:hidden flex-col origin-top bg-black text-white px-4 py-4 gap-4 transform scale-y-0 opacity-0 pointer-events-none transition-transform transition-opacity duration-300 ease-in-out"
->
-  <a
-    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
-    href="/reviews"
+  <!-- Menú móvil: DENTRO del header para que top-full se calcule respecto a él -->
+  <div
+    id="mobile-menu"
+    class="absolute left-0 right-0 top-full z-40 flex lg:hidden flex-col origin-top bg-black text-white px-4 py-4 gap-4 transform scale-y-0 opacity-0 pointer-events-none transition-all duration-300 ease-in-out"
   >
-    <Star size={20} />
-    <p>RESEÑAS</p>
-  </a>
-  <a
-    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
-    href="/news"
-  >
-    <Star size={20} />
-    <p>NOTICIAS</p>
-  </a>
-  <a
-    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
-    href="/top-charts"
-  >
-    <Star size={20} />
-    <p>TOP CHARTS</p>
-  </a>
-  <a
-    class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
-    href="/reseñas"
-  >
-    <Star size={20} />
-    <p>GALERÍA</p>
-  </a>
-</div>
+    <a
+      class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+      href="/reviews"
+    >
+      <Star size={20} />
+      <p>RESEÑAS</p>
+    </a>
+    <a
+      class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+      href="/news"
+    >
+      <Star size={20} />
+      <p>NOTICIAS</p>
+    </a>
+    <a
+      class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+      href="/top-charts"
+    >
+      <Star size={20} />
+      <p>TOP CHARTS</p>
+    </a>
+    <a
+      class="font-bold hover:text-red-500 transition-colors ease-in-out duration-300 flex flex-row gap-2 items-center"
+      href="/galeria"
+    >
+      <Star size={20} />
+      <p>GALERÍA</p>
+    </a>
+  </div>
+</header>
 
 <style>
   .navbar {
@@ -101,6 +102,7 @@ const { transforms = false } = Astro.props;
   .navbar.scrolled {
     background-color: white;
     -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     color: #fb2c36;
   }
 </style>

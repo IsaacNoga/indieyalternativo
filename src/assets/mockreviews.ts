@@ -1,12 +1,24 @@
 export const reviews = [
   {
+    mediaRoute: "/img/laobsesion.webp",
+    title: "LA OBSESIÓN VOL. 1",
+    subtitle: "LA OBSESIÓN",
+    link: "/",
+    resume:
+      "LA OBSESIÓN, VOL. 1 es un recordatorio de por qué los proyectos colectivos siguen siendo tan importantes para la música latinoamericana. Con más de diez integrantes del underground del rap, plugg, reggaetón y hip hop, el ya desintegrado colectivo presentó 17 temas que apuestan por la experimentación y una identidad propia frente a un reggaetón mexa cada vez más atrapado en fórmulas repetitivas.",
+    review:
+      "Su mayor virtud está en el exceso, la saturación y el caos: producciones densas, instrumentales que cambian constantemente, voces procesadas y flows que convierten el desorden en una experiencia sorprendentemente coherente. Entre la nostalgia de los mixes de reggaetón de los 2000 y una visión futurista y vanguardista, el proyecto consigue mirar al pasado sin dejar de explorar nuevas posibilidades. Hay también una confianza evidente en el talento individual de sus integrantes. Aunque algunas voces destacan inevitablemente sobre otras, la producción consigue otorgarle a cada intervención su propio espacio. Ningún verso parece estar de sobra y cada colaboración suma una nueva textura al conjunto. El resultado es un álbum que encuentra orden dentro de su propio caos: una obra en la que, pese a la saturación constante, todavía hay espacio para apreciar cada fragmento, cada voz y cada colaboración en la producción. LA OBSESIÓN, VOL. 1 es excesivo, ruidoso, impredecible y, sobre todo, colectivo. Un proyecto que demuestra que experimentar también significa reunir ideas, llevarlas al extremo y dejar que choquen entre sí. Una promesa del underground mexicano que dejó el recuerdo de todo lo que pudo haber sido. Suena a demasiadas cosas sucediendo al mismo tiempo. Y justamente por eso funciona.",
+    rate: 9.0,
+    genre: "URBANO - REGGAETON",
+  },
+  {
     mediaRoute: "/img/karolg.webp",
     title: "MAÑANA SERÁ BONITO",
     subtitle: "KAROL G",
     link: "/",
     resume:
       "Un disco que mezcla reggaetón, baladas y toques de pop con un tono emocional y luminoso.",
-    rate: 7.9,
+    rate: 10,
     genre: "URBANO - REGGAETON",
   },
   {
@@ -158,7 +170,8 @@ export const news = [
     title: "Luna Vega anuncia su nuevo álbum «Marea Alta»",
     excerpt:
       "La cantautora confirmó fecha de lanzamiento y adelantó el primer sencillo.",
-    content: "Contenido completo de la noticia...",
+    content:
+      "La cantautora Luna Vega confirmó este miércoles el lanzamiento de Marea Alta, su nuevo álbum de estudio, que llegará a todas las plataformas el próximo 20 de noviembre. El anuncio se hizo a través de sus redes sociales con un video corto grabado en el estudio, donde se le ve trabajando en los últimos detalles del disco. El álbum reúne once canciones escritas durante el último año, en las que Vega explora el paso del tiempo, las despedidas y la necesidad de volver a empezar. Según adelantó la artista, el título funciona como una metáfora: «Hay momentos en que todo sube de golpe y lo único que puedes hacer es aprender a flotar». Junto con la fecha de lanzamiento, la cantautora presentó el primer sencillo, que verá la luz la próxima semana. El tema apuesta por una producción más luminosa y expansiva que sus trabajos anteriores, con sintetizadores cálidos, percusiones suaves y la voz en primer plano, sin perder la cercanía que ha definido su sonido desde sus primeras canciones.Marea Alta fue grabado en distintas sesiones junto a un equipo de colaboradores habituales y algunos músicos invitados que se sumaron en la recta final. La artista no ha revelado todavía la lista completa de colaboraciones, pero aseguró que habrá sorpresas.De acuerdo con su equipo, en las próximas semanas se darán a conocer los detalles de la gira de presentación, que incluiría fechas en varias ciudades del país.",
     mediaRoute: "/img/news/luna-vega.webp",
     mediaAlt: "Luna Vega en el estudio de grabación",
     category: "lanzamiento",
@@ -168,7 +181,7 @@ export const news = [
     readingTime: 3,
     featured: true,
     relatedReview: "marea-alta",
-    link: "/noticias/luna-vega-anuncia-nuevo-album",
+    link: "/news/luna-vega-anuncia-nuevo-album",
   },
   {
     id: "n-002",
@@ -184,7 +197,7 @@ export const news = [
     publishedAt: "2026-10-07",
     readingTime: 4,
     featured: true,
-    link: "/noticias/los-ultramarinos-gira-latinoamerica",
+    link: "/news/los-ultramarinos-gira-latinoamerica",
   },
   {
     id: "n-003",
@@ -200,7 +213,7 @@ export const news = [
     publishedAt: "2026-10-06",
     readingTime: 5,
     featured: false,
-    link: "/noticias/festival-aurora-presenta-cartel",
+    link: "/news/festival-aurora-presenta-cartel",
   },
   {
     id: "n-004",
@@ -217,58 +230,7 @@ export const news = [
     publishedAt: "2026-10-05",
     readingTime: 3,
     featured: false,
-    link: "/noticias/dj-kairo-sello-propio",
-  },
-  {
-    id: "n-005",
-    slug: "entrevista-nora-quiroga",
-    title: "Nora Quiroga: «Quise hacer un disco sin miedo a equivocarme»",
-    excerpt:
-      "Conversamos con la artista sobre su proceso creativo y sus influencias.",
-    content: "Contenido completo de la noticia...",
-    mediaRoute: "/img/news/nora-quiroga.webp",
-    mediaAlt: "Retrato de Nora Quiroga",
-    category: "entrevista",
-    tags: ["entrevista", "indie", "proceso creativo"],
-    author: "Mariana Ortiz",
-    publishedAt: "2026-10-04",
-    readingTime: 8,
-    featured: true,
-    relatedReview: "nora-quiroga-desvelo",
-    link: "/noticias/entrevista-nora-quiroga",
-  },
-  {
-    id: "n-006",
-    slug: "premios-sonora-nominados",
-    title: "Premios Sonora revelan la lista de nominados",
-    excerpt: "Más de 20 categorías y varias sorpresas en la lista de este año.",
-    content: "Contenido completo de la noticia...",
-    mediaRoute: "/img/news/premios-sonora.webp",
-    mediaAlt: "Escenario de los Premios Sonora",
-    category: "premios",
-    tags: ["premios", "nominados"],
-    author: "Redacción",
-    publishedAt: "2026-10-03",
-    readingTime: 4,
-    featured: false,
-    link: "/noticias/premios-sonora-nominados",
-  },
-  {
-    id: "n-007",
-    slug: "trio-marfil-edicion-vinilo",
-    title: "Trío Marfil reedita su debut en vinilo",
-    excerpt:
-      "La edición limitada incluye tres temas inéditos y un librillo de fotos.",
-    content: "Contenido completo de la noticia...",
-    mediaRoute: "/img/news/trio-marfil.webp",
-    mediaAlt: "Portada del vinilo de Trío Marfil",
-    category: "lanzamiento",
-    tags: ["jazz", "vinilo", "reedición"],
-    author: "Diego Salas",
-    publishedAt: "2026-10-02",
-    readingTime: 3,
-    featured: false,
-    link: "/noticias/trio-marfil-edicion-vinilo",
+    link: "/news/dj-kairo-sello-propio",
   },
   {
     id: "n-008",
@@ -285,7 +247,7 @@ export const news = [
     publishedAt: "2026-10-01",
     readingTime: 6,
     featured: false,
-    link: "/noticias/plataforma-streaming-nueva-politica-pagos",
+    link: "/news/plataforma-streaming-nueva-politica-pagos",
   },
   {
     id: "n-009",
@@ -301,24 +263,6 @@ export const news = [
     publishedAt: "2026-09-30",
     readingTime: 4,
     featured: false,
-    link: "/noticias/cumbia-sonidera-festival-gratuito",
-  },
-  {
-    id: "n-010",
-    slug: "colectivo-neon-colaboracion-sorpresa",
-    title:
-      "Colectivo Neón estrena colaboración sorpresa con una productora emergente",
-    excerpt:
-      "El sencillo mezcla hyperpop, folclor y sintetizadores analógicos.",
-    content: "Contenido completo de la noticia...",
-    mediaRoute: "/img/news/colectivo-neon.webp",
-    mediaAlt: "Arte del sencillo de Colectivo Neón",
-    category: "lanzamiento",
-    tags: ["hyperpop", "sencillo", "colaboración"],
-    author: "Diego Salas",
-    publishedAt: "2026-09-29",
-    readingTime: 3,
-    featured: false,
-    link: "/noticias/colectivo-neon-colaboracion-sorpresa",
+    link: "/news/cumbia-sonidera-festival-gratuito",
   },
 ];

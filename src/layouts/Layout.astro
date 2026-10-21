@@ -1,9 +1,11 @@
 ---
 import "../styles/global.css";
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,12 +16,50 @@ import "../styles/global.css";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton"
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h2>Indie y Alternativo</h2>
+          <p>
+            Tu espacio para descubrir música independiente, nuevas bandas y
+            sonidos fuera de lo común.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="Enlaces del pie de página">
+          <h3>Información</h3>
+          <ul>
+            <li><a href="/aviso-de-privacidad">Aviso de privacidad</a></li>
+            <li>
+              <a href="/terminos-y-condiciones">Términos y condiciones</a>
+            </li>
+            <li><a href="/cookies">Política de cookies</a></li>
+            <li><a href="/contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contact">
+          <h3>Contacto</h3>
+          <p>contacto@indieyalternativo.com</p>
+          <p>Sonora, México</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; {year} Indie y Alternativo. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
 
@@ -28,6 +68,101 @@ import "../styles/global.css";
   body {
     margin: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    scrollbar-width: none;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .site-footer {
+    background-color: #000;
+    color: #d4d4d4;
+    padding: 3rem 1.5rem 1.5rem;
+    font-family: system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: #fff;
+    margin: 0 0 0.75rem;
+  }
+
+  .footer-brand p {
+    margin: 0;
+    line-height: 1.6;
+    max-width: 38ch;
+  }
+
+  .site-footer h3 {
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.75rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .site-footer a {
+    color: #d4d4d4;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .site-footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer-contact p {
+    margin: 0 0 0.5rem;
+  }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 2rem auto 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid #333;
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  @media (max-width: 700px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
