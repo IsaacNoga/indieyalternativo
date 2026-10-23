@@ -1,0 +1,273 @@
+//#region src/assets/mockreviews.ts
+var reviews = [
+	{
+		mediaRoute: "/img/laobsesion.webp",
+		title: "LA OBSESIÓN VOL. 1",
+		subtitle: "LA OBSESIÓN",
+		link: "/",
+		resume: "LA OBSESIÓN, VOL. 1 es un recordatorio de por qué los proyectos colectivos siguen siendo tan importantes para la música latinoamericana. Con más de diez integrantes del underground del rap, plugg, reggaetón y hip hop, el ya desintegrado colectivo presentó 17 temas que apuestan por la experimentación y una identidad propia frente a un reggaetón mexa cada vez más atrapado en fórmulas repetitivas.",
+		review: "Su mayor virtud está en el exceso, la saturación y el caos: producciones densas, instrumentales que cambian constantemente, voces procesadas y flows que convierten el desorden en una experiencia sorprendentemente coherente. Entre la nostalgia de los mixes de reggaetón de los 2000 y una visión futurista y vanguardista, el proyecto consigue mirar al pasado sin dejar de explorar nuevas posibilidades. Hay también una confianza evidente en el talento individual de sus integrantes. Aunque algunas voces destacan inevitablemente sobre otras, la producción consigue otorgarle a cada intervención su propio espacio. Ningún verso parece estar de sobra y cada colaboración suma una nueva textura al conjunto. El resultado es un álbum que encuentra orden dentro de su propio caos: una obra en la que, pese a la saturación constante, todavía hay espacio para apreciar cada fragmento, cada voz y cada colaboración en la producción. LA OBSESIÓN, VOL. 1 es excesivo, ruidoso, impredecible y, sobre todo, colectivo. Un proyecto que demuestra que experimentar también significa reunir ideas, llevarlas al extremo y dejar que choquen entre sí. Una promesa del underground mexicano que dejó el recuerdo de todo lo que pudo haber sido. Suena a demasiadas cosas sucediendo al mismo tiempo. Y justamente por eso funciona.",
+		rate: 9,
+		genre: "URBANO - REGGAETON"
+	},
+	{
+		mediaRoute: "/img/karolg.webp",
+		title: "MAÑANA SERÁ BONITO",
+		subtitle: "KAROL G",
+		link: "/",
+		resume: "Un disco que mezcla reggaetón, baladas y toques de pop con un tono emocional y luminoso.",
+		rate: 10,
+		genre: "URBANO - REGGAETON"
+	},
+	{
+		mediaRoute: "/img/arca.webp",
+		title: "KiCk i",
+		subtitle: "Arca",
+		link: "/",
+		resume: "Producción deformada y caótica que convive con melodías pop inesperadas. Un trabajo atrevido y personal.",
+		rate: 8,
+		genre: "ELECTRONICO - EXPERIMENTAL"
+	},
+	{
+		mediaRoute: "/img/charliexcx.webp",
+		title: "BRAT",
+		subtitle: "Charli XCX",
+		link: "/",
+		resume: "Sonido de club crudo y sin filtros, con una estética inconfundible y letras honestas sobre la fama.",
+		rate: 9.6,
+		genre: "ELECTRONICO - HYPERPOP"
+	},
+	{
+		mediaRoute: "/img/badbunny-verano.webp",
+		title: "Un Verano Sin Ti",
+		subtitle: "Bad Bunny",
+		link: "/",
+		resume: "Un recorrido caribeño de principio a fin, entre reggaetón, dembow, indie y bossa nova.",
+		rate: 9.1,
+		genre: "URBANO - REGGAETON"
+	},
+	{
+		mediaRoute: "/img/badbunny-debi.webp",
+		title: "DeBÍ TiRAR MáS FOToS",
+		subtitle: "Bad Bunny",
+		link: "/",
+		resume: "Homenaje a la música tradicional puertorriqueña llevado al terreno urbano y electrónico.",
+		rate: 8.7,
+		genre: "URBANO - LATIN"
+	},
+	{
+		mediaRoute: "/img/rosalia-motomami.webp",
+		title: "MOTOMAMI",
+		subtitle: "Rosalía",
+		link: "/",
+		resume: "Flamenco, reggaetón y electrónica en un disco inquieto que no se parece a nada de lo anterior.",
+		rate: 9,
+		genre: "POP - EXPERIMENTAL"
+	},
+	{
+		mediaRoute: "/img/kendrick-gnx.webp",
+		title: "GNX",
+		subtitle: "Kendrick Lamar",
+		link: "/",
+		resume: "Rap directo y con carácter de West Coast, con invitados bien elegidos y producción afilada.",
+		rate: 8.8,
+		genre: "HIP HOP - RAP"
+	},
+	{
+		mediaRoute: "/img/tyler-chromakopia.webp",
+		title: "CHROMAKOPIA",
+		subtitle: "Tyler, the Creator",
+		link: "/",
+		resume: "Un álbum introspectivo, ruidoso y juguetón sobre identidad y madurez.",
+		rate: 8.3,
+		genre: "HIP HOP - ALTERNATIVO"
+	},
+	{
+		mediaRoute: "/img/taylor-midnights.webp",
+		title: "Midnights",
+		subtitle: "Taylor Swift",
+		link: "/",
+		resume: "Synth pop nocturno y confesional, con melodías pegajosas y letras sobre el insomnio.",
+		rate: 7.4,
+		genre: "POP - SYNTH POP"
+	},
+	{
+		mediaRoute: "/img/billie-hmhas.webp",
+		title: "HIT ME HARD AND SOFT",
+		subtitle: "Billie Eilish",
+		link: "/",
+		resume: "Un disco íntimo y cohesivo, con arreglos sutiles y una voz que domina cada canción.",
+		rate: 8.5,
+		genre: "POP - ALTERNATIVO"
+	},
+	{
+		mediaRoute: "/img/tameimpala-currents.webp",
+		title: "Currents",
+		subtitle: "Tame Impala",
+		link: "/",
+		resume: "Psicodelia con sintetizadores y ritmos bailables. Un giro que redefinió su sonido.",
+		rate: 9.2,
+		genre: "ROCK - PSICODELIA"
+	},
+	{
+		mediaRoute: "/img/radiohead-okcomputer.webp",
+		title: "OK Computer",
+		subtitle: "Radiohead",
+		link: "/",
+		resume: "Retrato de la ansiedad tecnológica de finales de los 90, con guitarras, texturas y mucha tensión.",
+		rate: 9.8,
+		genre: "ROCK - ALTERNATIVO"
+	},
+	{
+		mediaRoute: "/img/daftpunk-ram.webp",
+		title: "Random Access Memories",
+		subtitle: "Daft Punk",
+		link: "/",
+		resume: "Disco, funk y música en vivo grabada con músicos de estudio. Elegante y nostálgico.",
+		rate: 8.9,
+		genre: "ELECTRONICO - DISCO"
+	},
+	{
+		mediaRoute: "/img/fredagain-actuallife.webp",
+		title: "Actual Life (April 1 – December 31 2020)",
+		subtitle: "Fred again..",
+		link: "/",
+		resume: "Diario sonoro hecho de samples de voces, mensajes y momentos cotidianos sobre house emotivo.",
+		rate: 7.7,
+		genre: "ELECTRONICO - HOUSE"
+	},
+	{
+		mediaRoute: "/img/pesopluma-genesis.webp",
+		title: "GÉNESIS",
+		subtitle: "Peso Pluma",
+		link: "/",
+		resume: "Corridos tumbados con colaboraciones de peso y un sonido que cruzó fronteras.",
+		rate: 7.1,
+		genre: "REGIONAL MEXICANO - CORRIDOS"
+	}
+];
+var news = [
+	{
+		id: "n-001",
+		slug: "luna-vega-anuncia-nuevo-album",
+		title: "Luna Vega anuncia su nuevo álbum «Marea Alta»",
+		excerpt: "La cantautora confirmó fecha de lanzamiento y adelantó el primer sencillo.",
+		content: "La cantautora Luna Vega confirmó este miércoles el lanzamiento de Marea Alta, su nuevo álbum de estudio, que llegará a todas las plataformas el próximo 20 de noviembre. El anuncio se hizo a través de sus redes sociales con un video corto grabado en el estudio, donde se le ve trabajando en los últimos detalles del disco. El álbum reúne once canciones escritas durante el último año, en las que Vega explora el paso del tiempo, las despedidas y la necesidad de volver a empezar. Según adelantó la artista, el título funciona como una metáfora: «Hay momentos en que todo sube de golpe y lo único que puedes hacer es aprender a flotar». Junto con la fecha de lanzamiento, la cantautora presentó el primer sencillo, que verá la luz la próxima semana. El tema apuesta por una producción más luminosa y expansiva que sus trabajos anteriores, con sintetizadores cálidos, percusiones suaves y la voz en primer plano, sin perder la cercanía que ha definido su sonido desde sus primeras canciones.Marea Alta fue grabado en distintas sesiones junto a un equipo de colaboradores habituales y algunos músicos invitados que se sumaron en la recta final. La artista no ha revelado todavía la lista completa de colaboraciones, pero aseguró que habrá sorpresas.De acuerdo con su equipo, en las próximas semanas se darán a conocer los detalles de la gira de presentación, que incluiría fechas en varias ciudades del país.",
+		mediaRoute: "/img/news/luna-vega.webp",
+		mediaAlt: "Luna Vega en el estudio de grabación",
+		category: "lanzamiento",
+		tags: [
+			"pop",
+			"álbum",
+			"anuncio"
+		],
+		author: "Redacción",
+		publishedAt: "2026-10-08",
+		readingTime: 3,
+		featured: true,
+		relatedReview: "marea-alta",
+		link: "/news/luna-vega-anuncia-nuevo-album"
+	},
+	{
+		id: "n-002",
+		slug: "los-ultramarinos-gira-latinoamerica",
+		title: "Los Ultramarinos anuncian gira por Latinoamérica",
+		excerpt: "La banda recorrerá 12 ciudades con una producción renovada.",
+		content: "Contenido completo de la noticia...",
+		mediaRoute: "/img/news/ultramarinos.webp",
+		mediaAlt: "Los Ultramarinos sobre el escenario",
+		category: "gira",
+		tags: [
+			"rock",
+			"gira",
+			"conciertos"
+		],
+		author: "Redacción",
+		publishedAt: "2026-10-07",
+		readingTime: 4,
+		featured: true,
+		link: "/news/los-ultramarinos-gira-latinoamerica"
+	},
+	{
+		id: "n-003",
+		slug: "festival-aurora-presenta-cartel",
+		title: "Festival Aurora presenta su cartel completo",
+		excerpt: "Tres días de música con más de 40 artistas en cinco escenarios.",
+		content: "Contenido completo de la noticia...",
+		mediaRoute: "/img/news/festival-aurora.webp",
+		mediaAlt: "Vista aérea del Festival Aurora",
+		category: "festival",
+		tags: [
+			"festival",
+			"cartel",
+			"electrónica"
+		],
+		author: "Mariana Ortiz",
+		publishedAt: "2026-10-06",
+		readingTime: 5,
+		featured: false,
+		link: "/news/festival-aurora-presenta-cartel"
+	},
+	{
+		id: "n-004",
+		slug: "dj-kairo-sello-propio",
+		title: "DJ Kairo lanza su propio sello discográfico",
+		excerpt: "«Pulso Records» apostará por productores emergentes de house y techno.",
+		content: "Contenido completo de la noticia...",
+		mediaRoute: "/img/news/dj-kairo.webp",
+		mediaAlt: "DJ Kairo detrás de la consola",
+		category: "industria",
+		tags: [
+			"electrónica",
+			"sello",
+			"house"
+		],
+		author: "Diego Salas",
+		publishedAt: "2026-10-05",
+		readingTime: 3,
+		featured: false,
+		link: "/news/dj-kairo-sello-propio"
+	},
+	{
+		id: "n-008",
+		slug: "plataforma-streaming-nueva-politica-pagos",
+		title: "Plataforma de streaming cambia su política de pagos a artistas",
+		excerpt: "El nuevo modelo promete mayores ingresos para artistas independientes.",
+		content: "Contenido completo de la noticia...",
+		mediaRoute: "/img/news/streaming.webp",
+		mediaAlt: "Auriculares sobre un teléfono con app de música",
+		category: "industria",
+		tags: [
+			"streaming",
+			"industria",
+			"independientes"
+		],
+		author: "Redacción",
+		publishedAt: "2026-10-01",
+		readingTime: 6,
+		featured: false,
+		link: "/news/plataforma-streaming-nueva-politica-pagos"
+	},
+	{
+		id: "n-009",
+		slug: "cumbia-sonidera-festival-gratuito",
+		title: "Festival gratuito de cumbia sonidera llega al norte del país",
+		excerpt: "Una jornada con sonideros, bandas locales y feria gastronómica.",
+		content: "Contenido completo de la noticia...",
+		mediaRoute: "/img/news/cumbia-festival.webp",
+		mediaAlt: "Público bailando en un festival de cumbia",
+		category: "festival",
+		tags: [
+			"cumbia",
+			"festival",
+			"gratis"
+		],
+		author: "Mariana Ortiz",
+		publishedAt: "2026-09-30",
+		readingTime: 4,
+		featured: false,
+		link: "/news/cumbia-sonidera-festival-gratuito"
+	}
+];
+//#endregion
+export { reviews as n, news as t };
